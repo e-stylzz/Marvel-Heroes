@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {PageEvent} from '@angular/material/paginator';
 import { HeroService } from 'src/app/hero.service';
 
 @Component({
@@ -11,16 +12,19 @@ export class HomeComponent implements OnInit {
 
   heroes: [];
   count = 0;
-  limit = 0;
+  limit = 5;
   offset = 0;
   total = 0;
+  pageEvent: PageEvent;
 
   ngOnInit(): void {
-    this.getHeroes();
+    this.getHeroes(this.limit, this.offset);
   }
 
-  getHeroes() {
-    this.heroService.getHeroes().subscribe((heroes) => {
+  getHeroes(limit: number, offset: number) {
+    console.log('limit: ', limit);
+    console.log('offset: ', offset);
+    this.heroService.getHeroes(limit, offset).subscribe((heroes) => {
       console.log('Data @ Controller: ', heroes);
       this.heroes = heroes.result.results;
 
@@ -29,5 +33,17 @@ export class HomeComponent implements OnInit {
       this.offset = heroes.result.offset;
       this.total = heroes.result.total;
     });
+  }
+
+  getHeroesPaging(event: PageEvent) {
+    this.limit = event.pageSize;
+    console.log("this paging event got called: ", event);
+    console.log('this.limit: ', this.limit);
+    console.log('event.pageIndex: ', event.pageIndex);
+    let newOffset = this.limit * (event.pageIndex);
+
+    console.log('newOffset: ', newOffset);
+    this.getHeroes(this.limit, newOffset)
+
   }
 }

@@ -9,8 +9,9 @@ import { catchError } from 'rxjs/operators';
 export class HeroService {
   constructor(private http: HttpClient) {}
 
-  getHeroes(): Observable<any> {
-    const url = '/api/hero';
+  getHeroes(limit: number, offset: number): Observable<any> {
+    const url = '/api/hero?limit='+limit+'&offset='+offset;
+    console.log('Calling: ', url);
     return this.http.get<any>(url).pipe(catchError(this._handleError));
   }
 
