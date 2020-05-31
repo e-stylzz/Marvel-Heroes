@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { HeroesModule } from './heroes/heroes.module';
 import { HomeComponent } from './home/home.component';
+import { ComicsModule } from './comics/comics.module';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent],
@@ -18,6 +19,7 @@ import { HomeComponent } from './home/home.component';
     MatToolbarModule,
     HttpClientModule,
     HeroesModule,
+    ComicsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
