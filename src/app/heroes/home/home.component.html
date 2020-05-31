@@ -1,0 +1,8 @@
+<p>Some heroes</p>
+
+<div class="hero" *ngFor="let hero of heroes">
+  Hero Name: {{ hero.name }}<br />
+  <img src="{{ hero.thumbnail.path }}/portrait_fantastic.jpg" />
+
+  <!-- {{ hero | json }} -->
+</div>
