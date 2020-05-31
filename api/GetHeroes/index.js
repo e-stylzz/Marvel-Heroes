@@ -8,7 +8,6 @@ module.exports = async function (context, req) {
   let prehash = ts + private_key + public_key;
   let hash = md5(prehash);
 
-  console.log("Hash: ", hash);
   let url =
     "https://gateway.marvel.com:443/v1/public/characters?ts=" +
     ts +

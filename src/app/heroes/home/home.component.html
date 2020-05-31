@@ -1,8 +1,13 @@
 <p>Some heroes</p>
 
-<div class="hero" *ngFor="let hero of heroes">
-  Hero Name: {{ hero.name }}<br />
-  <img src="{{ hero.thumbnail.path }}/portrait_fantastic.jpg" />
+<div id="container">
+  <div class="hero" *ngFor="let hero of heroes">
+    Name: {{ hero.name }}<br />
+    <img src="{{ hero.thumbnail.path }}/portrait_fantastic.jpg" />
 
-  <!-- {{ hero | json }} -->
+    <!-- {{ hero | json }} -->
+  </div>
+</div>
+<div>
+  <mat-paginator [length]="this.total" [pageSize]="20"> </mat-paginator>
 </div>
