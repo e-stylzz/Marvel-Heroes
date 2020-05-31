@@ -9,7 +9,7 @@
   </div>
 </div>
 <div>
-  <mat-paginator [length]="this.total" [pageSize]="this.limit" [pageSizeOptions]="[5, 10, 25, 100]" (page)="pageEvent = getHeroesPaging($event)"> </mat-paginator>
+  <mat-paginator [length]="this.total" [pageSize]="this.limit" [pageSizeOptions]="[5, 10, 25, 100]" (page)="getHeroesPaging($event)"> </mat-paginator>
 </div>
 
 <pre>Data provided by Marvel. © 2014 Marvel</pre>
