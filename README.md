@@ -7,3 +7,5 @@ Testing & Learning the following:
 - Azure Functions
 - Addon: Marvel API
 - Addon: Material Pagination
+
+The goodness:  https://black-field-0c836030f.azurestaticapps.net
